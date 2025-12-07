@@ -1,0 +1,44 @@
+# How to deploy ngrok for a Streamlit app
+
+1. Install ngrok
+   - Download ngrok from the official website: https://ngrok.com/download
+   - Unzip it and place it in a known folder (e.g., C:\ngrok on Windows)
+
+2. Install Streamlit
+   - Make sure you have Python installed
+   - Open terminal/command prompt and run:
+     pip install streamlit
+
+3. Create your Streamlit app
+   - Example: save this as app.py
+     import streamlit as st
+
+     st.title("My Streamlit App with ngrok")
+     st.write("Hello, this is running via ngrok!")
+
+4. Start Streamlit locally
+   - Run in terminal:
+     streamlit run app.py
+   - Streamlit will show a local URL like http://localhost:8501
+
+5. Start ngrok to expose Streamlit
+   - Open another terminal and navigate to ngrok folder
+   - Run:
+     ./ngrok http 8501   # On Windows use: ngrok.exe http 8501
+   - ngrok will provide a public URL like:
+     https://abcd1234.ngrok.io
+
+6. Access your Streamlit app
+   - Open the public ngrok URL in any browser
+   - Your app is now live online
+
+7. Optional: authtoken
+   - Sign up on ngrok website
+   - Get your auth token
+   - Run:
+     ngrok config add-authtoken <your_token>
+   - This allows longer sessions and custom subdomains
+
+# Notes
+- Always download ngrok from the official website to avoid malware.
+- Close ngrok when done to stop exposing your local machine.
