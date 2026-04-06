@@ -9,7 +9,7 @@ st.set_page_config(page_title="Car EDA Dashboard", layout="wide")
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("clean_data.csv")
+    return pd.read_csv("microsoft_club_final_project/dashboard/clean_data.csv")
 
 df = load_data()
 
